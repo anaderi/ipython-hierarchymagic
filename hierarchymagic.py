@@ -203,10 +203,10 @@ class FoldedInheritanceGraph(InheritanceGraph):
         width = self._width
 
         def fold(elem):
-            (nodename, fullname, baselist) = elem
+            (nodename, fullname, baselist, tooltip) = elem
             nodename = self._foldclassname(nodename, width)
             baselist = [self._foldclassname(b, width) for b in baselist]
-            return (nodename, fullname, baselist)
+            return (nodename, fullname, baselist, tooltip)
 
         return map(fold, class_info)
 
